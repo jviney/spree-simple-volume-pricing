@@ -4,5 +4,4 @@ ProductsHelper.module_eval do
     variant_price_diff_without_volume_discount variant
   end
   alias_method_chain :variant_price_diff, :volume_discount
-end unless ProductsHelper.instance_methods.include? \
-             :variant_price_diff_with_volume_discount
+end unless ProductsHelper.public_instance_methods.include?("variant_price_diff_with_volume_discount")
